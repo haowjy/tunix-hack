@@ -1,0 +1,78 @@
+[project]
+name = "lib"
+version = "0.1.0"
+description = "GRPO reasoning model training for Kaggle Tunix competition"
+requires-python = ">=3.11"
+
+dependencies = [
+    # Core ML
+    "jax[cuda13]",
+    "flax",
+    "optax",
+    "transformers",
+
+    # Tunix (GRPO training)
+    "google-tunix",
+    "qwix",
+    "kagglehub",
+    "tensorflow-datasets",
+    "orbax-checkpoint",
+    "tensorboardX",
+    "grain",
+
+    # Data
+    "datasets",
+    "pandas",
+    "numpy",
+
+    # Utilities
+    "tqdm",
+    "pyyaml",
+    "kaggle>=1.8.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Notebooks
+    "jupyter",
+    "ipykernel",
+    "ipywidgets",
+
+    # Experiment tracking
+    "wandb",
+
+    # Code quality
+    "ruff",
+    "pytest",
+]
+
+kaggle = [
+    # Minimal deps for Kaggle TPU environment
+    # JAX TPU version handled by Kaggle
+    "transformers",
+    "datasets",
+    "pandas",
+    "numpy",
+    "tqdm",
+    "pyyaml",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+dev-dependencies = [
+    "jupyter",
+    "ipykernel",
+    "wandb",
+    "ruff",
+    "pytest",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

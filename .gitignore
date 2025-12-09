@@ -210,6 +210,9 @@ __marimo__/
 # Project-specific
 # ===================
 
+# Temporary files (TensorBoard logs, intermediate checkpoints)
+tmp/
+
 # Data directories (large files, downloaded datasets)
 data/*
 !data/.gitkeep

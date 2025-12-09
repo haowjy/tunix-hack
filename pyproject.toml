@@ -1,5 +1,5 @@
 [project]
-name = "lib"
+name = "tunix_hack"
 version = "0.1.0"
 description = "GRPO reasoning model training for Kaggle Tunix competition"
 requires-python = ">=3.11"
@@ -10,7 +10,6 @@ dependencies = [
     "flax",
     "optax",
     "transformers",
-
     # Tunix (GRPO training)
     "google-tunix",
     "qwix",
@@ -19,16 +18,17 @@ dependencies = [
     "orbax-checkpoint",
     "tensorboardX",
     "grain",
-
     # Data
     "datasets",
     "pandas",
     "numpy",
-
     # Utilities
     "tqdm",
     "pyyaml",
     "kaggle>=1.8.2",
+    "wandb>=0.23.0",
+    "huggingface-hub>=0.36.0",
+    "tensorboard>=2.20.0",
 ]
 
 [project.optional-dependencies]
@@ -71,7 +71,11 @@ dev-dependencies = [
     "wandb",
     "ruff",
     "pytest",
+    "tunix-hack",
 ]
+
+[tool.uv.sources]
+tunix-hack = { workspace = true }
 
 [tool.ruff]
 line-length = 100

@@ -18,7 +18,7 @@ jupyter lab
 
 ## Architecture
 
-### Source Code (`src/lib/`)
+### Source Code (`src/tunix_hack/`)
 
 - **`rewards/`** - Domain-specific reward functions for GRPO training
   - `math_reward.py` - Binary correctness (80%) + structure bonus (20%)
